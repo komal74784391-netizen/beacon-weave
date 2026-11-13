@@ -1,24 +1,12 @@
-# Signal Drift Audit
+# Beacon Weave
 
-Status: **Released** - v1.0.0 (2026-09-30)
+Status: **Released** - v1.1.0 (2026-10-05)
 
-A toolkit for auditing slow drift in long-horizon sensor meshes.  It ingests
-multi-channel time series, estimates baseline behaviour with a robust rolling
-median, and reports per-channel drift scores.
+Fault-tolerant time synchronisation for mesh nodes.  The implementation tolerates
+dropped beacons and transient clock skew while keeping a bounded error envelope.
 
-## Implementation
+## Layout
 
-- `src/drift_audit/core.py` - stream loading and rolling baseline estimation
-- `src/drift_audit/metrics.py` - drift score and error metrics
-- `data/manifest.csv` - example stream manifest
-- `experiments/calibration_report.md` - calibration experiment notes
-
-## Quick start
-
-```bash
-python -m drift_audit.core data/manifest.csv
-```
-
-## Citation
-
-Cite the NRS 2027 proceedings entry if you use this toolkit.
+- `src/beacon_weave/sync.py` - beacon filtering and clock correction
+- `data/topology.yaml` - example mesh topology
+- `experiments/latency.md` - latency experiment notes

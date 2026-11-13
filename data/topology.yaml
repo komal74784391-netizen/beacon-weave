@@ -1,0 +1,10 @@
+nodes:
+  - id: hub
+    neighbours: [north, east, south]
+  - id: north
+    neighbours: [hub, north_east]
+  - id: east
+    neighbours: [hub, south_east]
+  - id: south
+    neighbours: [hub, south_west]
+beacon_interval_ms: 250
